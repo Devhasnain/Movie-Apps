@@ -1,10 +1,22 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Dimensions, Image } from "react-native";
+import { Dimensions, Image, TouchableOpacity } from "react-native";
 
 import COLORS from "@/constants/colors";
+import { Text } from "react-native-paper";
+import { CommonActions, useNavigation } from "@react-navigation/native";
 
 const FetchingError = () => {
+  const navigation = useNavigation();
+
+  const reloadPage = () => {
+    navigation.dispatch(
+      CommonActions.reset({
+        routes: [{ name: "Home" }],
+      })
+    );
+  };
+
   return (
     <Container>
       <Title>oops!!</Title>
@@ -13,6 +25,9 @@ const FetchingError = () => {
         width: Dimensions.get("window").width * 0.7,
         height: Dimensions.get("window").width * 0.7
       }} />
+      <TouchableOpacity onPress={reloadPage}>
+        <Text style={{color:"white"}}>Reload</Text>
+      </TouchableOpacity>
     </Container>
   );
 };

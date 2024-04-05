@@ -1,11 +1,7 @@
-import { SafeAreaView } from "react-native-safe-area-context";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-
 import HorizontalList from "@/components/UI/HorizontalList";
 import useApi from "@/hooks/useApi";
 import FetchingError from "@/components/UI/FetchingError";
 import HeroSection from "@/components/home-screen/HeroSection";
-import { HomeStackParamList } from "@/types/navigation";
 import SkeletonHome from "@/components/UI/Skeleton/SkeletonHome";
 import { ScrollView, View } from "react-native";
 
